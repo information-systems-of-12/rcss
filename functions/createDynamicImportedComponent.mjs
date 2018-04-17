@@ -8,7 +8,7 @@ export default parameters => {
   
   let WrappedComponent = null
 
-  class AsyncComponent extends Component {
+  class DynamicImportedComponent extends Component {
 
     constructor( props ){
       super( props )
@@ -16,7 +16,7 @@ export default parameters => {
       this.state.WrappedComponent = WrappedComponent
       this.setWrappedComponent = this.setWrappedComponent.bind( this )
 
-      AsyncComponent.load().then( () => {
+      DynamicImportedComponent.load().then( () => {
         this.setWrappedComponent()
       } )
       
@@ -47,15 +47,15 @@ export default parameters => {
       WrappedComponent = ResolvedComponent.default || ResolvedComponent
 
       for ( const key of Object.keys( WrappedComponent ) ){
-        AsyncComponent[ key ] = WrappedComponent[ key ]
+        DynamicImportedComponent[ key ] = WrappedComponent[ key ]
       }
     }
 
   }
 
-  AsyncComponent.WrappedComponent = WrappedComponent
+  DynamicImportedComponent.WrappedComponent = WrappedComponent
 
-  return AsyncComponent
+  return DynamicImportedComponent
   
 
 }

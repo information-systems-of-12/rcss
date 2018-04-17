@@ -1,6 +1,6 @@
-import createAsyncComponent from './createAsyncComponent.mjs'
-import loadAsyncComponents from './loadAsyncComponents.mjs'
+import createDynamicImportedComponent from './createDynamicImportedComponent.mjs'
+import loadDynamicImportedComponents from './loadDynamicImportedComponents.mjs'
 export {
-  createAsyncComponent,
-  loadAsyncComponents
+  createDynamicImportedComponent,
+  loadDynamicImportedComponents
 }

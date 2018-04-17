@@ -1,6 +1,6 @@
 {
   "name": "iso12-rcss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react components splitting service",
   "main": "./functions/main.mjs",
   "scripts": {
