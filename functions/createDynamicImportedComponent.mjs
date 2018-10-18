@@ -46,9 +46,19 @@ export default parameters => {
       const ResolvedComponent = await loader()
       WrappedComponent = ResolvedComponent.default || ResolvedComponent
 
+
+      const propertyNames = Object.getOwnPropertyNames( WrappedComponent )
+
+      for ( const propertyName of propertyNames ){
+        if ( propertyName !== 'length' && propertyName !== 'prototype' && propertyName !== 'name' ){
+          DynamicImportedComponent[ propertyName ] = WrappedComponent[ propertyName ]
+        }
+      }
+
       for ( const key of Object.keys( WrappedComponent ) ){
         DynamicImportedComponent[ key ] = WrappedComponent[ key ]
       }
+      
     }
 
   }
